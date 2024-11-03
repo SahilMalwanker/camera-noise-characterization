@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "camera-noise-characterization"
+version = "1.0.0"
+description = "Camera characterisation bench: optics calculator, photon-transfer noise analysis and filter benchmarks, validated against a physics-based sensor twin."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+keywords = ["computer-vision", "camera", "photon-transfer", "emva1288", "image-noise", "denoising", "edge-detection", "machine-vision"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Image Processing",
+]
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "pillow>=10.0",
+]
+
+[project.optional-dependencies]
+plot = ["matplotlib>=3.7"]
+dev = ["matplotlib>=3.7", "pytest>=7.4", "ruff>=0.16,<0.17"]
+
+[project.scripts]
+camera-noise-characterization = "camera_noise_characterization.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "NPY", "SIM"]
