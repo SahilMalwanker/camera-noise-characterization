@@ -1,0 +1,11 @@
+exposure_us,gain,mean_dn,sigma_diff_dn,include,source
+4500,1,129,2.50,1,logged
+2200,2,129,3.80,1,logged
+1460,3,129,4.90,1,logged
+1050,4,129,5.94,1,logged
+850,5,129,6.89,1,exposure logged; noise digitised from lab plot
+720,6,129,7.90,1,digitised from lab plot
+610,7,129,8.81,1,digitised from lab plot
+530,8,129,9.80,1,digitised from lab plot
+456,9,,10.38,0,digitised; exposure x gain 7 % below the others -> lower signal
+250,10,,9.82,0,digitised; exposure x gain 43 % below the others -> lower signal
